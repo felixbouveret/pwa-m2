@@ -15,5 +15,6 @@ app.post("/answers", (req, res, next) => {
 });
 
 app.listen("8011", () => {
+  console.log("http://localhost:8011");
   console.log("App started on port 8011");
 });

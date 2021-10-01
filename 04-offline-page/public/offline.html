@@ -13,6 +13,31 @@
       document.querySelector("button").addEventListener("click", () => {
         document.location.reload();
       });
+
+      const createNodes = (data) => {
+        const nodeBody = document.querySelector("body");
+        const container = document.createElement("ul");
+        data
+          .filter(({ url }) => url.endsWith(".html") || url.endsWith("/"))
+          .forEach((e) => {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.setAttribute("href", e.url);
+            link.innerText = e.url;
+            item.append(link);
+            container.append(item);
+          });
+        nodeBody.append(container);
+      };
+
+      caches
+        .open("v1.1")
+        .then(async (res) => {
+          const keys = await res.keys();
+          console.log(keys);
+          createNodes(keys);
+        })
+        .catch((err) => console.error(err));
     </script>
   </body>
 </html>
