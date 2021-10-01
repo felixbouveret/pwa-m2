@@ -16,7 +16,8 @@
     "09-update-notification": "nodemon 09-update-notification/server.js",
     "10-background-sync": "nodemon 10-background-sync/server.js",
     "11-sync-notifications": "nodemon 11-sync-notifications/server.js",
-    "12-custom-response": "nodemon 12-custom-response/server.js"
+    "12-custom-response": "nodemon 12-custom-response/server.js",
+    "dev": "nodemon my-pwa/server.js"
   },
   "author": "Clément Ollivier",
   "license": "MIT",
